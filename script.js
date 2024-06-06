@@ -19,6 +19,20 @@ console.log(`our planet is ${planet}`);
 console.log(typeof(5));
 console.log(typeof null);
 
+//alert, prompt
+let yourAge=prompt('сколько тебе лет');
+const lblAge=document.querySelector('.age');
+lblAge.innerHTML=yourAge;
+
+const res=confirm('я здесь БОСС!!!')
+const lblBoss=document.querySelector('.boss');
+lblBoss.innerHTML=res;
+
+
+
+
+
+
 
 
 
