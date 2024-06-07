@@ -113,10 +113,41 @@
 //                     'Здравствуйте';
 // alert(msg);
 
-//Условные операторы, тринарный оператор
-const a=prompt('Введите число а');
-const b=prompt('Введите число b');
+// //Условные операторы, тринарный оператор
+// const a=prompt('Введите число а');
+// const b=prompt('Введите число b');
 
-let sum=+a + +b<14;
-alert(sum ? sum + ' мало': sum + ' много');
-console.log(sum);
+// let sum=+a + +b<14;
+// alert(sum ? sum + ' мало': sum + ' много');
+// console.log(sum);
+
+//Использование логического ИЛИ
+// const firstName=prompt('Введите имя ');
+// const secondName=prompt('Введите фамилию');
+// const nickName=prompt('Введите имя пользователя');
+
+// const msg=firstName||secondName||nickName||'Гость';//выполняется проверка на вхождение, первая значение которое равно true будет возращено
+// alert(msg);
+// false||alert('Show me your self');
+
+// let car=prompt('Введите название своего автомобиля');
+// car ||= "У него нету автомашины";
+// alert(car);
+
+//Использование логического И 
+alert(1 && 'первое значение в выражении 0 && true ложно значит вернется первый операнд');
+alert (1 && null && 3);
+
+const x=prompt('Введите значение Х');
+x>0 && alert(`Вы ввели значение ${x} которое больше нуля`);
+
+//преобразование к логическому типу
+const text='непустая строка';
+let txt=!!text;
+console.log(typeof txt);//тип Boolean
+
+let bTxt=Boolean(text);
+console.log(typeof bTxt);//тип Boolean
+
+console.log(!!'непустая строка');
+console.log(Boolean('тоже самое что и первая строка'));
