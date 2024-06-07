@@ -46,6 +46,50 @@ console.log(Boolean(0));
 
 
 
+//базовые операции
+console.log(6%5);//остаток от деления
+console.log(3**4);//возведение в степень
+
+console.log(3+4+'78');//сложение с строкой
+console.log('45'+90);//сложение со строкой
+console.log('6'/'3');//деление происходит как обычно сначало идет преобразование строки к числу
+console.log('45'-5);//вычитание происходит также как и деление
+
+
+//Привидение к типу, унарный плюс
+console.log(typeof(+'34'));
+console.log(+true);
+console.log(+false);
+
+
+let apple='34';
+let ananas='12';
+console.log(apple+ananas);//происходит сначала 
+console.log(+apple + +ananas);//происходит сначала преобразование к типам
+
+console.log(+apple + +ananas);//происходит сначала преобразование к типам
+
+
+let a=(1+3, 3+3);
+console.log(a);
+
+a=1+3, 3+3;
+console.log(a);
+
+const x=prompt('введите число X');
+const y=prompt('введите число Y');
+const sum=+x + +y;
+const sumEl=document.querySelector('.sum');
+sumEl.innerHTML=sum;
+// alert(`сумма равна: ${sum} `);
+
+
+
+
+
+
+
+
 
 
 
