@@ -198,9 +198,111 @@
 // }
 // console.log('sum is ', sum);
 
-//Конструкция switch case
-let arg=+prompt('Введите число');
-switch(arg){
-    case 3: alert('вы ввели число три');
-    case '3': alert('вы ввели символо три');
+// //Конструкция switch case
+// let arg=+prompt('Введите число');
+// switch(arg){
+//     case 3: alert('вы ввели число три');
+//     case '3': alert('вы ввели символо три');
+// }
+
+
+//Работа с функциями
+// let user='Петя';
+// function showMessage(){
+//     console.log('глобальная переменная ',user);
+//     user='Вася';
+//     console.log('локальная переменная ', user);
+// }
+// showMessage();
+
+// function showMessage(from, text){
+//     text=text||'текст не добавлен';
+//     console.log('первый параметр', from );
+//     console.log('второй параметр', text);
+// }
+// showMessage('aloha!!', 'that right');
+
+// function showCount(count){
+//     console.log(count??'значение не задано');
+// }
+// showCount();
+// showCount(null);
+// showCount(0);
+
+// function checkAge(age){
+//     if(age??false){
+//     // age??false?{
+//         let msg=`your age is ${age} `; 
+//         msg+=age>18?'so you can access':'don\'t have access';
+//         return msg;
+//     }
+//     return 'введите возраст';
+// }
+
+// console.log(checkAge());
+// console.log(checkAge(20));
+
+//function declaration
+// function doNothig(){
+// }
+// console.log(doNothig()==2);
+
+// //задачи
+// function anotherCheckAge(age){
+//     // return age??'это не возраст';
+//     return (age>18)||'you don\'t have access to this site';
+// }
+// console.log(anotherCheckAge(16));
+
+
+//function expression
+let sayHi=function(){
+    console.log('say hi');
 }
+let aloha=sayHi;
+aloha();
+sayHi;//неправильный вызов 
+
+// //callback function
+// ask('Вы согласны?', 
+//     function(){'Вы согласились!!!'},
+//     function(){'Вы не согласились'}
+// )
+
+// function ask(question, yes, no){
+//    if(confirm) {yes();}
+//    else{no();}
+// }
+// //использование function expression
+// let age=prompt('how old are you');
+// let welcome;
+// if(age>18){
+//     welcome=function(){console.log('you can access to this site');}
+// }else{
+//     welcome=function(){console.log('sorry to young');}
+// }
+// welcome();
+
+//короткая форма записи
+// let age=prompt('Enter your age');
+// let welcome=(age<18) ? 
+//     function(){console.log('hello');}:
+//     function(){console.log('good day');}
+
+// welcome();
+
+//стрелочная функция
+// const a=+prompt('input a');
+// const b=+prompt('input a');
+
+// const sum=(a, b)=>{
+//     const tmp=a+b;
+//     return tmp;
+// }
+
+// console.log('summa is :', sum(a, b));
+
+// const age=prompt('input your age');
+// let welcome = (age>18)?()=>alert('you can access to site'):
+//                        ()=>alert('you don\'t have permisssion');
+// welcome();
