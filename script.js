@@ -152,36 +152,55 @@
 // console.log(!!'непустая строка');
 // console.log(Boolean('тоже самое что и первая строка'));
 
-//оператор нулевого слияния
-let user='jim';
-// alert(user??'Guest');
-console.log(user??'Guest');
+// //оператор нулевого слияния
+// let user='jim';
+// // alert(user??'Guest');
+// console.log(user??'Guest');
 
-// let test=0;
-let test=null;
-console.log(test||1000);
-console.log(test??'используется оператор нулевого слияния ?? так как test undefined');
+// // let test=0;
+// let test=null;
+// console.log(test||1000);
+// console.log(test??'используется оператор нулевого слияния ?? так как test undefined');
 
-let x= (1 || 4) ?? 5;
-console.log(x);
+// let x= (1 || 4) ?? 5;
+// console.log(x);
 
-let age;
-const yourAge=prompt('Введите ваш возраст');
-age??=yourAge;
-console.log('you age is ', age);
+// let age;
+// const yourAge=prompt('Введите ваш возраст');
+// age??=yourAge;
+// console.log('you age is ', age);
 
-let num1 = 10,
-    num2 = 20,
-    result;
+// let num1 = 10,
+//     num2 = 20,
+//     result;
 
-if (result === null || result === undefined) {
-  if (num1 !== null && num1 !== undefined) {
-    result = num1;
-  } else {
-    result = num2;
-  }
+// if (result === null || result === undefined) {
+//   if (num1 !== null && num1 !== undefined) {
+//     result = num1;
+//   } else {
+//     result = num2;
+//   }
+// }
+// console.log(result);
+
+// result??=num1??num2;
+// console.log(result);
+
+
+// //Циклы for and while
+// let sum=0;
+// while(true){
+//     let value=+prompt('Введите число');
+//     if(!value) break;
+//     sum+=value;
+//     console.log('sum is ', sum);
+//     console.log('value is ', value);
+// }
+// console.log('sum is ', sum);
+
+//Конструкция switch case
+let arg=+prompt('Введите число');
+switch(arg){
+    case 3: alert('вы ввели число три');
+    case '3': alert('вы ввели символо три');
 }
-console.log(result);
-
-result??=num1??num2;
-console.log(result);
