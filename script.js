@@ -134,20 +134,54 @@
 // car ||= "У него нету автомашины";
 // alert(car);
 
-//Использование логического И 
-alert(1 && 'первое значение в выражении 0 && true ложно значит вернется первый операнд');
-alert (1 && null && 3);
+// //Использование логического И 
+// alert(1 && 'первое значение в выражении 0 && true ложно значит вернется первый операнд');
+// alert (1 && null && 3);
 
-const x=prompt('Введите значение Х');
-x>0 && alert(`Вы ввели значение ${x} которое больше нуля`);
+// const x=prompt('Введите значение Х');
+// x>0 && alert(`Вы ввели значение ${x} которое больше нуля`);
 
-//преобразование к логическому типу
-const text='непустая строка';
-let txt=!!text;
-console.log(typeof txt);//тип Boolean
+// //преобразование к логическому типу
+// const text='непустая строка';
+// let txt=!!text;
+// console.log(typeof txt);//тип Boolean
 
-let bTxt=Boolean(text);
-console.log(typeof bTxt);//тип Boolean
+// let bTxt=Boolean(text);
+// console.log(typeof bTxt);//тип Boolean
 
-console.log(!!'непустая строка');
-console.log(Boolean('тоже самое что и первая строка'));
+// console.log(!!'непустая строка');
+// console.log(Boolean('тоже самое что и первая строка'));
+
+//оператор нулевого слияния
+let user='jim';
+// alert(user??'Guest');
+console.log(user??'Guest');
+
+// let test=0;
+let test=null;
+console.log(test||1000);
+console.log(test??'используется оператор нулевого слияния ?? так как test undefined');
+
+let x= (1 || 4) ?? 5;
+console.log(x);
+
+let age;
+const yourAge=prompt('Введите ваш возраст');
+age??=yourAge;
+console.log('you age is ', age);
+
+let num1 = 10,
+    num2 = 20,
+    result;
+
+if (result === null || result === undefined) {
+  if (num1 !== null && num1 !== undefined) {
+    result = num1;
+  } else {
+    result = num2;
+  }
+}
+console.log(result);
+
+result??=num1??num2;
+console.log(result);
