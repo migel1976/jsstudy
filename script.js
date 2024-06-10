@@ -306,3 +306,39 @@ sayHi;//неправильный вызов
 // let welcome = (age>18)?()=>alert('you can access to site'):
 //                        ()=>alert('you don\'t have permisssion');
 // welcome();
+
+//Объекты
+const myKey='your hobbie';
+const user={
+    age:18,
+    sex:'male',
+    myKey:'kite'
+}
+
+console.log(user.age);
+console.log(user.sex);
+console.log(user.myKey);
+
+let fruit=prompt('input fruit', 'apple');
+console.log(fruit);
+
+//проверка на вхождения поля в объкте
+console.log('age' in user);
+console.log('aloha' in user);
+
+for(let key in user){
+    console.log('key is ', key);
+    console.log(user[key]);
+    // console.log(user.key);
+}
+
+//клонирование объектов
+//при копировании экземпляра объекта происходит передача ссылки на объект
+
+const test1={
+    name:'jim'
+}
+let test2=test1;
+test1.name='John';
+
+console.log(test1.name);
