@@ -255,13 +255,13 @@
 // console.log(anotherCheckAge(16));
 
 
-//function expression
-let sayHi=function(){
-    console.log('say hi');
-}
-let aloha=sayHi;
-aloha();
-sayHi;//неправильный вызов 
+// //function expression
+// let sayHi=function(){
+//     console.log('say hi');
+// }
+// let aloha=sayHi;
+// aloha();
+// sayHi;//неправильный вызов 
 
 // //callback function
 // ask('Вы согласны?', 
@@ -307,38 +307,99 @@ sayHi;//неправильный вызов
 //                        ()=>alert('you don\'t have permisssion');
 // welcome();
 
-//Объекты
-const myKey='your hobbie';
-const user={
-    age:18,
-    sex:'male',
-    myKey:'kite'
+// //Объекты
+// const myKey='your hobbie';
+// const user={
+//     age:18,
+//     sex:'male',
+//     myKey:'kite'
+// }
+
+// console.log(user.age);
+// console.log(user.sex);
+// console.log(user.myKey);
+
+// // let fruit=prompt('input fruit', 'apple');
+// // console.log(fruit);
+
+// //проверка на вхождения поля в объкте
+// console.log('age' in user);
+// console.log('aloha' in user);
+
+// for(let key in user){
+//     console.log('key is ', key);
+//     console.log(user[key]);
+//     // console.log(user.key);
+// }
+
+// //клонирование объектов
+// //при копировании экземпляра объекта происходит передача ссылки на объект
+
+// const test1={
+//     name:'jim'
+// }
+// let test2=test1;
+// test1.name='John';
+// console.log(test1.name);
+// console.log('compare object test1 to test2, they equal coz, refer to on object', test1==test2);
+// console.log('compare object test1 to test2, they equal coz, refer to on object', test1===test2);
+
+// const a={};
+// const b={};
+// console.log('compare object a to b', a===b);
+// console.log('compare object a to b', a==b);
+
+
+// const clone=Object.assign({},test1);
+// console.log('clone object use method Object.assign', clone===test1);
+// clone.name='fedor';
+// console.log('clone.name is ', clone.name);
+
+
+// const obj1={
+//     user:'pete',
+//     kiter:{
+//         kite:'cabrihna',
+//         board:'flydoor'
+//     }
+// }
+
+// const sasha=Object.assign({},obj1);
+// console.log('объекты obj1 и sasha не равны друг другу ', obj1===sasha);
+// console.log('вложенный объект kiter obj1 и sasha равны друг другу ', obj1.kiter===sasha.kiter);
+
+
+// //методы объекта
+// const user={
+//     name:'jim',
+//     age:27,
+//     sayHi(){
+//         console.log(`${this.name} say aloha, his age ${this.age}`);
+//         // console.log('aloha');
+//     }
+// }
+// user.sayHi();
+
+const user={name:'Soul'};
+const admin={name:'Admin'};
+
+function sayHi(){
+    console.log(`user ${this.name} say aloha`);
 }
 
-console.log(user.age);
-console.log(user.sex);
-console.log(user.myKey);
+user.f=sayHi;
+user.f();
 
-let fruit=prompt('input fruit', 'apple');
-console.log(fruit);
+admin.f=sayHi;
+admin.f();
 
-//проверка на вхождения поля в объкте
-console.log('age' in user);
-console.log('aloha' in user);
-
-for(let key in user){
-    console.log('key is ', key);
-    console.log(user[key]);
-    // console.log(user.key);
+function makeUser(){
+    return{
+        name:'Fedor',
+        ref(){
+            return this;
+        }
+    }
 }
-
-//клонирование объектов
-//при копировании экземпляра объекта происходит передача ссылки на объект
-
-const test1={
-    name:'jim'
-}
-let test2=test1;
-test1.name='John';
-
-console.log(test1.name);
+const newUser=makeUser();
+console.log(`имя пользователя ${newUser.ref().name}`);
