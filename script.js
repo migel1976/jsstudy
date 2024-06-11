@@ -384,7 +384,9 @@ const user={name:'Soul'};
 const admin={name:'Admin'};
 
 function sayHi(){
-    console.log(`user ${this.name} say aloha`);
+    const msg=`user ${this.name} say aloha`;
+    console.log(msg);
+    return msg;
 }
 
 user.f=sayHi;
@@ -403,3 +405,55 @@ function makeUser(){
 }
 const newUser=makeUser();
 console.log(`имя пользователя ${newUser.ref().name}`);
+
+const sumDiv=document.querySelector('.sum');
+const h=document.createElement('h1');
+h.textContent=`имя пользователя ${newUser.ref().name}`;
+sumDiv.appendChild(h);
+
+const ul=`<ul>
+            <li>${user.f()}</li>
+            <li>${admin.f()}</li>
+          </ul>`;
+sumDiv.insertAdjacentHTML('beforebegin', ul);
+
+
+function User(name, age){
+    this.name=name, 
+    this.age=age
+};
+
+const jim=new User('jim morrison', 27);
+const jimHtml=document.createElement('p');
+jimHtml.textContent=`his name is ${jim.name} and his ${jim.age} age old`;
+sumDiv.insertAdjacentElement("afterend", jimHtml);
+
+const signer=document.querySelector('.signer');
+const alice=new User('alice cooper', 56);
+const aliceHtml=document.createElement('h1');
+aliceHtml.textContent=`his name is ${alice.name} and his ${alice.age} age old`;
+signer.appendChild(aliceHtml);
+
+
+//создание функции в объекте
+function NewUser(name){
+    this.name=name,
+    this.sayHi=function(){
+        // return this.name;
+        // console.log(`меня зовут ${name}`);
+        const msg=`<h2><i>Меня зовут ${this.name} </i></h2>`;
+        return msg;
+    }
+}
+const petr=new NewUser('Petr');
+const petrDiv=document.querySelector('.petr');
+petrDiv.insertAdjacentHTML("beforebegin", petr.sayHi());
+
+//задачи 
+let obj={};
+function A(){ return obj;}
+function B(){ return obj;}
+console.log(`объект A === B ${new A()===new B()}`);
+
+
+
